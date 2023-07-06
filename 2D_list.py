@@ -4,8 +4,7 @@ while True:
     if name == 'q':
         break
     price = input('please enter product price: ')
-    p = []
-    p.append(name)
-    p.append(price)
-    products.append(p)
-print(products)
+    products.append([name, price])
+with open('products.csv', 'w') as f:
+    for p in products:
+        f.write(p[0] + ',' + p[1] + '\n')
